@@ -1,0 +1,61 @@
+/* Style for the main container */
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+hr {
+    border: 2px solid #4CAF50;
+}
+
+/* Style for the form */
+.form-group label {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* Style for the buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Style for the alert box displaying prediction */
+.alert-info {
+    background-color: #d9edf7;
+    color: #31708f;
+    border-color: #bce8f1;
+    margin-top: 20px;
+}
+
+.alert-info strong {
+    font-size: 18px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+}

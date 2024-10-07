@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE GENRE CLASSIFICATION</title>
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='movie.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict The Genre Of A Movie</h1>
+        <hr>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Form to enter movie overview -->
+                <form method="POST" action="/predict">
+                    <div class="form-group">
+                        <label for="text">Movie Overview</label>
+                        <textarea class="form-control" id="text" name="text" rows="5" placeholder="Enter movie overview..." required>{{ input_text if input_text else "" }}</textarea>
+                    </div>
+                    <button type="submit">Predict</button>
+                </form>
+                
+                <!-- Display the prediction result -->
+                {% if prediction %}
+                <div class="mt-4 alert alert-info">
+                    <strong>Predicted Genre: </strong> {{ prediction }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
